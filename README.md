@@ -3,11 +3,7 @@
 Семантический поиск и вопросно-ответная система по тексту романа И.С. Тургенева «Отцы и дети» с использованием Corrective RAG.
 
 ## 🏗️ Архитектура
-Пользователь → Continue (IntelliJ) → MCP Server → Corrective RAG → Ollama (LLM)
-↓
-ChromaDB (векторная БД)
-
-text
+Пользователь → Continue (IntelliJ) → MCP Server → Corrective RAG → Ollama (LLM) → ChromaDB (векторная БД)
 
 ### Компоненты:
 - **Ollama** — локальный LLM-сервер (модель `qwen2.5:3b`)
@@ -61,13 +57,13 @@ python download_book.py
 ```
 Текст будет сохранён в папку otsi_i_deti/ в виде отдельных .txt файлов по главам.
 
-4. Индексация книги
+4. Индексация книги (не обязательно, реализовано, как команда mcp-сервера)
 ```powershell
 python .\tests\run_indexer.py .\otsi_i_deti\
 ```
 После индексации в папке book_chroma_db_ru/ появится векторная база данных.
 
-5. Проверка поиска
+5. Проверка поиска (не обязательно, но для этого необходим созданный индес)
 ```powershell
 python .\tests\test_search.py
 ```
