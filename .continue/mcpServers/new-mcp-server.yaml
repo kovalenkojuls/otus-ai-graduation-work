@@ -1,0 +1,7 @@
+name: Отцы и дети RAG
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: Отцы и дети RAG
+    transport: streamable-http
+    url: http://localhost:8000/mcp
